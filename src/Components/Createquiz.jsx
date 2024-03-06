@@ -41,9 +41,18 @@ export function Createquiz() {
     }
 
     return (
-        <div>
+        <div className="maindiv">
+             {popup ? <div className="createquizdiv">
+                    <div className="overlay">
+                        <input type="Radio" />MCQ Type
+                        <input type="Radio" style={{marginLeft:'10px'}}/>Short Type
+                        <input type="Radio" style={{marginLeft:'10px'}}/>Long Type
+                        
+                    </div>  
+                </div> : null}
             <Navbar />
-            <div className="quizdiv">
+            
+            <div className="quizdiv fixed">
                 <h1>Create New Quiz</h1>
                 <label>Title : </label>
                 <input type="text" placeholder="Quiz Title" />
@@ -52,11 +61,7 @@ export function Createquiz() {
                 <input type="text" placeholder="Quiz Description" />
 
                 <button onClick={popupClick}>Select Type</button>
-                {popup ? <div className="createquizdiv">
-                    {/* <div className="overlay"> */}
-                        <button>MCQ Single</button>
-                    {/* </div> */}
-                </div> : null}
+               
 
             </div>
             {/* <div className="createquizdiv">
